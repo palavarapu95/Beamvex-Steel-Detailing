@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Beamvex Steel Detailing Pvt Ltd</title>
+<meta name="description" content="Beamvex Steel Detailing prepares shop drawings, erection drawings, connection designs and fabrication files for steel fabricators, EPC contractors and engineers.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%22-20 -20 340 255%22%3E%3Crect x=%22-20%22 y=%22-20%22 width=%22340%22 height=%22255%22 rx=%2230%22 fill=%22%23F5C400%22/%3E%3Cg color=%22%230F1E2B%22%3E%3Cpath d=%22M0 0H170C192 0 208 16 208 40H184C184 30 178 24 170 24H35V191H170C178 191 184 190 184 185H208C208 200 192 215 170 215H0Z%22 fill=%22currentColor%22/%3E%3Crect x=%2244%22 y=%2240%22 width=%22252%22 height=%22145%22 fill=%22none%22 stroke=%22currentColor%22 stroke-width=%225%22/%3E%3Cg transform=%22translate%288 0%29%22 fill=%22currentColor%22%3E%3Cpath fill-rule=%22evenodd%22 d=%22M60 60H104C126 60 136 74 136 90C136 101 130 108 122 112C133 116 142 125 142 138C142 156 130 170 106 170H60ZM80 78V104H102C110 104 116 99 116 91C116 83 110 78 102 78ZM80 122V152H106C115 152 121 146 121 137C121 128 115 122 106 122Z%22/%3E%3Cpath d=%22M172 60H262V78H227V152H262V170H172V152H207V78H172Z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF; --panel:#EAF1FB; --fill:#D6E6F8;
+  --ink:#0B2545; --ink-soft:#3E5977; --line:#C6D7E8; --line-strong:#7A93B0;
+  --dim:#1857B8;
+  --hivis:#D31027; --hivis-hover:#B50E21; --hivis-strong:#8F0B1A; --on-hivis:#FFFFFF;
+  --inv-bg:#0B2545; --inv-fg:#FFFFFF; --inv-soft:#AFC4DE; --inv-line:#264874;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --paper:#0A1730; --panel:#10203D; --fill:#173056;
+    --ink:#EAF1FB; --ink-soft:#A9BEDA; --line:#233F63; --line-strong:#4D6C99;
+    --dim:#5B9BF2;
+    --hivis:#FF4550; --hivis-hover:#FF6169; --hivis-strong:#FF4550; --on-hivis:#0A1730;
+    --inv-bg:#061024; --inv-fg:#FFFFFF; --inv-soft:#A9BEDA; --inv-line:#1C3454;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#0A1730; --panel:#10203D; --fill:#173056;
+  --ink:#EAF1FB; --ink-soft:#A9BEDA; --line:#233F63; --line-strong:#4D6C99;
+  --dim:#5B9BF2;
+  --hivis:#FF4550; --hivis-hover:#FF6169; --hivis-strong:#FF4550; --on-hivis:#0A1730;
+  --inv-bg:#061024; --inv-fg:#FFFFFF; --inv-soft:#A9BEDA; --inv-line:#1C3454;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px);scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
+  font-size:1.0625rem;line-height:1.6;font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:'Archivo','Helvetica Neue',Arial,sans-serif}
+h1,h2{font-stretch:72%;font-weight:800;letter-spacing:-.01em;line-height:1}
+h1{font-size:clamp(2.9rem,6.4vw,5.4rem)}
+h2{font-size:clamp(2rem,3.6vw,3rem)}
+h3{font-stretch:92%;font-weight:700;font-size:1.2rem;line-height:1.25}
+:focus-visible{outline:3px solid var(--dim);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,1200px);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--hivis);color:var(--on-hivis);padding:.6rem 1rem;z-index:100;font-weight:700}
+.skip:focus{left:1rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+
+/* buttons */
+.btn{
+  display:inline-block;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;
+  padding:.85rem 1.4rem;border-radius:2px;border:2px solid transparent;line-height:1.2;
+}
+.btn-primary{background:var(--hivis);color:var(--on-hivis)}
+.btn-primary:hover{background:var(--hivis-hover)}
+.btn-sm{padding:.55rem 1rem;font-size:.95rem}
+.link-plain{font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+.link-plain:hover{text-decoration-color:var(--hivis-strong)}
+
+/* header */
+.top{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:var(--paper);border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:68px}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.mark{width:56px;height:40px;flex:none;color:var(--ink)}
+.brand-name{display:block;font-stretch:112%;font-weight:800;font-size:1.3rem;line-height:1;letter-spacing:.03em;text-transform:uppercase}
+.brand-sub{display:block;font-size:.6rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);line-height:1;margin-top:.4rem}
+.nav{display:flex;align-items:center;gap:1.75rem}
+.nav .links{display:flex;gap:1.5rem}
+.nav .links a{text-decoration:none;font-weight:500;padding:.3rem 0;border-bottom:2px solid transparent}
+.nav .links a:hover{border-bottom-color:var(--hivis-strong)}
+.theme{
+  width:40px;height:40px;display:grid;place-items:center;background:none;color:var(--ink);
+  border:1px solid var(--line-strong);border-radius:2px;cursor:pointer;
+}
+.theme:hover{background:var(--panel)}
+
+/* hero */
+.hero{padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,6vw,5.5rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.75rem,4vw,4rem);align-items:center}
+.hero-copy p.lead{margin-top:1.5rem;font-size:1.15rem;max-width:34rem;color:var(--ink-soft)}
+.hero-actions{margin-top:2rem;display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem 1.75rem}
+.hero-note{margin-top:1.75rem;font-size:.95rem;color:var(--ink-soft);max-width:30rem;border-left:4px solid var(--hivis);padding-left:.9rem}
+
+/* drawing sheet */
+.sheet{border:2px solid var(--ink);padding:5px;background:var(--paper)}
+.sheet-in{border:1px solid var(--ink)}
+.sheet-scroll{
+  overflow-x:auto;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(color-mix(in srgb,var(--line) 45%,transparent) 1px,transparent 1px),
+    linear-gradient(90deg,color-mix(in srgb,var(--line) 45%,transparent) 1px,transparent 1px);
+  background-size:24px 24px;
+}
+.dwg{display:block;width:100%;min-width:640px;height:auto}
+.tb{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--ink);border-top:1px solid var(--ink)}
+.tb>div{background:var(--paper);padding:.4rem .6rem;font-size:.86rem;line-height:1.3;min-width:0}
+.tb small{display:block;font-size:.7rem;color:var(--ink-soft);line-height:1.2}
+.tb b{font-weight:700}
+.tb .c3{grid-column:span 3}
+.tb .rev{background:var(--hivis);color:var(--on-hivis)}
+.tb .rev small{color:var(--on-hivis)}
+
+/* svg drawing styles */
+.dwg .o{fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linejoin:round}
+.dwg .t{fill:none;stroke:var(--ink);stroke-width:1}
+.dwg .fillshape{fill:var(--fill);stroke:none}
+.dwg .dm{fill:none;stroke:var(--dim);stroke-width:1}
+.dwg .cl{fill:none;stroke:var(--dim);stroke-width:1;stroke-dasharray:14 3 3 3}
+.dwg .ph{fill:none;stroke:var(--line-strong);stroke-width:1;stroke-dasharray:5 3}
+.dwg .weld{fill:var(--ink)}
+.dwg .bside{fill:var(--paper);stroke:var(--ink);stroke-width:1.2}
+.dwg .bolt{fill:var(--paper);stroke:var(--ink);stroke-width:1.3}
+.dwg .bub{fill:var(--paper);stroke:var(--ink);stroke-width:1.4}
+.dwg .tx{fill:var(--ink);font-size:14px}
+.dwg .tag{font-weight:800}
+.dwg .dt{fill:var(--dim);font-size:13px;font-weight:600;text-anchor:middle}
+.dwg .bt{fill:var(--ink);font-size:13px;font-weight:800;text-anchor:middle}
+.dwg .revtri{fill:var(--hivis);stroke:var(--ink);stroke-width:1.2}
+.dwg .revtxt{fill:var(--on-hivis);font-size:12px;font-weight:800;text-anchor:middle}
+.dwg .cloud{fill:var(--hivis);fill-opacity:.22;stroke:var(--hivis-strong);stroke-width:2.2;stroke-linejoin:round}
+
+@media (prefers-reduced-motion:no-preference){
+  .dwg .draw{stroke-dasharray:1;stroke-dashoffset:1;animation:bx-draw 1.5s cubic-bezier(.6,.05,.3,1) forwards;animation-delay:var(--d,0s)}
+  .dwg .fade{opacity:0;animation:bx-fade .6s ease forwards;animation-delay:var(--f,1.5s)}
+  .dwg .fillshape{opacity:0;animation:bx-fade .7s ease forwards;animation-delay:.9s}
+  .dwg .cloud{stroke-dasharray:1;stroke-dashoffset:1;fill-opacity:0;animation:bx-draw 1.1s ease-out 2.5s forwards,bx-cloud .7s ease 3.4s forwards}
+  .dwg .revtag{opacity:0;animation:bx-fade .5s ease 3.5s forwards}
+}
+@keyframes bx-draw{to{stroke-dashoffset:0}}
+@keyframes bx-fade{to{opacity:1}}
+@keyframes bx-cloud{to{fill-opacity:.22}}
+
+/* bands */
+.band{padding:clamp(3.5rem,7vw,6rem) 0}
+.band-panel{background:var(--panel)}
+.band-inv{background:var(--inv-bg);color:var(--inv-fg)}
+.band-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:1.5rem clamp(1.5rem,4vw,4rem);align-items:end;margin-bottom:clamp(2rem,4vw,3rem)}
+.band-head p{color:var(--ink-soft);max-width:38rem}
+
+/* services register */
+.reg{border-top:2px solid var(--ink)}
+.reg details{border-bottom:1px solid var(--line-strong)}
+.reg summary{
+  display:grid;grid-template-columns:3.6rem 1fr 1.5rem;gap:1rem;align-items:center;
+  padding:1.15rem .25rem;cursor:pointer;list-style:none;
+}
+.reg summary::-webkit-details-marker{display:none}
+.reg summary:hover{background:var(--panel)}
+.reg .code{
+  display:inline-grid;place-items:center;height:2.2rem;border:1.5px solid var(--ink);border-radius:2px;
+  font-stretch:85%;font-weight:800;font-size:.95rem;
+}
+.reg details[open] .code{background:var(--hivis);border-color:var(--hivis);color:var(--on-hivis)}
+.reg .name{font-stretch:78%;font-weight:800;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.15}
+.reg .plus{position:relative;width:1.1rem;height:1.1rem}
+.reg .plus::before,.reg .plus::after{content:"";position:absolute;background:var(--ink);left:0;right:0;top:calc(50% - 1px);height:2px;transition:transform .2s ease}
+.reg .plus::after{transform:rotate(90deg)}
+.reg details[open] .plus::after{transform:rotate(0deg)}
+.reg .body{display:grid;grid-template-columns:3.6rem minmax(0,1fr);gap:1rem;padding:0 .25rem 1.6rem}
+.reg .body-in{grid-column:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem 3rem}
+.reg .body p{color:var(--ink-soft);max-width:34rem}
+.reg .body ul{margin:0;padding:0;list-style:none}
+.reg .body li{padding:.45rem 0 .45rem 1.25rem;border-top:1px solid var(--line);position:relative}
+.reg .body li:first-child{border-top:0;padding-top:0}
+.reg .body li::before{content:"";position:absolute;left:0;top:1.02rem;width:.55rem;height:.55rem;background:var(--hivis-strong)}
+.reg .body li:first-child::before{top:.58rem}
+
+/* process */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 1.25rem;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:21px;height:10px;background:var(--ink)}
+.steps li{position:relative;padding-top:4.1rem}
+.steps .hex{
+  position:absolute;top:0;left:0;width:46px;height:52px;display:grid;place-items:center;
+  background:var(--hivis);color:var(--on-hivis);font-stretch:85%;font-weight:800;font-size:1.25rem;
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+}
+.steps h3{margin-bottom:.5rem}
+.steps p{font-size:.98rem;color:var(--ink-soft)}
+
+/* standards */
+.std{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem clamp(1.5rem,4vw,3.5rem);margin-top:clamp(2rem,4vw,3rem)}
+.std>div{border-top:2px solid var(--hivis);padding-top:1.1rem}
+.std h3{margin-bottom:.6rem}
+.std p{color:var(--inv-soft);max-width:26rem}
+.band-inv h2{max-width:36rem}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:2rem clamp(1.5rem,4vw,4rem)}
+.sectors .intro p{margin-top:1.1rem;color:var(--ink-soft);max-width:26rem}
+.sector-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem}
+.sector-list li{padding:1.1rem 0;border-top:1px solid var(--line-strong)}
+.sector-list li:nth-child(-n+2){border-top:2px solid var(--ink)}
+.sector-list strong{display:block;font-weight:700;font-size:1.08rem;line-height:1.3}
+.sector-list span{display:block;margin-top:.3rem;color:var(--ink-soft);font-size:.98rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:2rem clamp(1.5rem,4vw,4rem);align-items:start}
+.contact .side p{margin-top:1.1rem;color:var(--ink-soft);max-width:28rem}
+.contact .mail{margin-top:1.5rem;display:inline-block;font-weight:700;font-size:1.15rem}
+.contact .careers{margin-top:2rem;padding-top:1.25rem;border-top:1px solid var(--line-strong);max-width:28rem}
+.contact .careers p{margin-top:.4rem}
+.contact .careers a{font-weight:700}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;background:var(--panel);padding:clamp(1.25rem,3vw,2rem);border-top:4px solid var(--hivis)}
+.form .full{grid-column:1 / -1}
+.form label{display:block;font-weight:600;font-size:.95rem;margin-bottom:.35rem}
+.form input,.form select,.form textarea{
+  width:100%;font:inherit;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line-strong);border-radius:2px;padding:.7rem .8rem;
+}
+.form textarea{min-height:8.5rem;resize:vertical}
+.form-note{font-size:.9rem;color:var(--ink-soft)}
+.form .actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.25rem}
+
+/* footer */
+.foot{background:var(--inv-bg);color:var(--inv-fg);padding:2.5rem 0 3rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;justify-content:space-between;align-items:flex-start}
+.foot .mark{color:var(--inv-fg);width:72px;height:52px}
+.foot .brand-name{font-size:1.5rem}
+.foot .brand-sub{display:block;color:var(--inv-soft)}
+.foot nav{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
+.foot nav a{text-decoration:none;color:var(--inv-fg)}
+.foot nav a:hover{text-decoration:underline}
+.foot small{display:block;width:100%;color:var(--inv-soft);border-top:1px solid var(--inv-line);padding-top:1.25rem}
+
+/* scroll-reveal transitions */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+.reveal.in-view{opacity:1;transform:none}
+.reveal-stag>*{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal-stag.in-view>*{opacity:1;transform:none}
+.reveal-stag.in-view>*:nth-child(1){transition-delay:.02s}
+.reveal-stag.in-view>*:nth-child(2){transition-delay:.09s}
+.reveal-stag.in-view>*:nth-child(3){transition-delay:.16s}
+.reveal-stag.in-view>*:nth-child(4){transition-delay:.23s}
+.reveal-stag.in-view>*:nth-child(5){transition-delay:.30s}
+.reveal-stag.in-view>*:nth-child(6){transition-delay:.37s}
+.reveal-stag.in-view>*:nth-child(7){transition-delay:.44s}
+@media (prefers-reduced-motion:reduce){.reveal,.reveal-stag>*{opacity:1;transform:none;transition:none}}
+
+/* hover / interaction transitions across the site */
+.btn,.theme,.nav .links a,.link-plain,.sector-list li,.reg summary,.reg .code,.reg .plus::before,.reg .plus::after,
+.std>div,.form input,.form select,.form textarea,.steps .hex,.foot nav a{transition:background-color .25s ease,color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px -8px color-mix(in srgb,var(--hivis) 70%,transparent)}
+.nav .links a:hover{transform:translateY(-1px)}
+.sector-list li{cursor:default}
+.sector-list li:hover{background:var(--panel);padding-left:.6rem}
+.steps li:hover .hex{transform:scale(1.08) rotate(-4deg)}
+.std>div:hover{transform:translateY(-5px)}
+.reg summary:hover .code{background:var(--hivis-strong);border-color:var(--hivis-strong);color:var(--on-hivis)}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--dim);box-shadow:0 0 0 3px color-mix(in srgb,var(--dim) 22%,transparent)}
+.theme:hover{transform:rotate(18deg)}
+
+/* animated beam / column network (hero backdrop) */
+.hero{position:relative;isolation:isolate}
+.hero-grid{position:relative;z-index:1}
+.beam-net{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.beam-net svg{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.4}
+.beam-net .col-line{fill:none;stroke:var(--line-strong);stroke-width:1.3;stroke-dasharray:5 7}
+.beam-net .beam-line{fill:none;stroke:var(--line-strong);stroke-width:1.3;stroke-dasharray:5 7}
+.beam-net .beam-flow{fill:none;stroke:var(--hivis-strong);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:.1 1;stroke-dashoffset:1}
+.beam-net .node{fill:var(--dim)}
+@media (prefers-reduced-motion:no-preference){
+  .beam-net .beam-flow{animation:beam-travel 3.2s linear infinite}
+  .beam-net .node{animation:node-pulse 2.6s ease-in-out infinite}
+}
+@keyframes beam-travel{to{stroke-dashoffset:-1}}
+@keyframes node-pulse{0%,100%{r:3.4;opacity:.9}50%{r:6.5;opacity:.3}}
+
+/* responsive */
+@media (max-width:980px){
+  .hero-grid,.band-head,.sectors,.contact{grid-template-columns:minmax(0,1fr)}
+  .std{grid-template-columns:minmax(0,1fr)}
+  .nav .links{display:none}
+  .steps{grid-template-columns:minmax(0,1fr);gap:1.75rem 0}
+  .steps::before{left:20px;right:auto;top:0;bottom:0;width:10px;height:auto}
+  .steps li{padding:0 0 0 4.2rem;min-height:52px}
+  .steps .hex{left:-2px}
+  .reg .body-in{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .tb{grid-template-columns:repeat(2,1fr)}
+  .tb .c3{grid-column:span 2}
+  .sector-list{grid-template-columns:minmax(0,1fr)}
+  .sector-list li:nth-child(2){border-top:1px solid var(--line-strong)}
+  .form{grid-template-columns:minmax(0,1fr)}
+  .reg summary{grid-template-columns:3rem 1fr 1.2rem;gap:.75rem}
+  .reg .body{grid-template-columns:3rem minmax(0,1fr);gap:.75rem}
+  .brand-sub{display:none}
+  .mark{width:46px;height:33px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="bx-mark" viewBox="0 0 300 215">
+<path d="M0 0H170C192 0 208 16 208 40H184C184 30 178 24 170 24H35V191H170C178 191 184 190 184 185H208C208 200 192 215 170 215H0Z" fill="currentColor"/>
+<rect x="44" y="40" width="252" height="145" fill="none" stroke="currentColor" stroke-width="5"/>
+<g transform="translate(8 0)" fill="currentColor">
+<path fill-rule="evenodd" d="M60 60H104C126 60 136 74 136 90C136 101 130 108 122 112C133 116 142 125 142 138C142 156 130 170 106 170H60ZM80 78V104H102C110 104 116 99 116 91C116 83 110 78 102 78ZM80 122V152H106C115 152 121 146 121 137C121 128 115 122 106 122Z"/>
+<path d="M172 60H262V78H227V152H262V170H172V152H207V78H172Z"/>
+</g>
+</symbol></svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Beamvex Steel Detailing, home">
+      <svg class="mark" viewBox="0 0 300 215" aria-hidden="true"><use href="#bx-mark"/></svg>
+      <span>
+        <span class="brand-name">Beamvex</span>
+        <span class="brand-sub">Steel Detailing</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#standards">Standards</a>
+        <a href="#sectors">Sectors</a>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#contact">Get a quote</a>
+      <button class="theme" id="theme" type="button" aria-label="Switch between light and dark theme" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="beam-net" aria-hidden="true">
+    <svg viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice">
+      <line class="col-line" x1="60" y1="20" x2="60" y2="500"/>
+      <line class="col-line" x1="330" y1="20" x2="330" y2="500"/>
+      <line class="col-line" x1="620" y1="20" x2="620" y2="500"/>
+      <line class="col-line" x1="900" y1="20" x2="900" y2="500"/>
+      <line class="col-line" x1="1150" y1="20" x2="1150" y2="500"/>
+      <line class="beam-line" x1="60" y1="150" x2="330" y2="150"/>
+      <line class="beam-line" x1="330" y1="150" x2="620" y2="150"/>
+      <line class="beam-line" x1="620" y1="150" x2="900" y2="150"/>
+      <line class="beam-line" x1="900" y1="150" x2="1150" y2="150"/>
+      <line class="beam-line" x1="60" y1="360" x2="330" y2="360"/>
+      <line class="beam-line" x1="330" y1="360" x2="620" y2="360"/>
+      <line class="beam-line" x1="620" y1="360" x2="900" y2="360"/>
+      <line class="beam-line" x1="900" y1="360" x2="1150" y2="360"/>
+      <line class="beam-line" x1="60" y1="150" x2="330" y2="360"/>
+      <line class="beam-line" x1="620" y1="150" x2="900" y2="360"/>
+      <line class="beam-flow" pathLength="1" x1="60" y1="150" x2="330" y2="150"/>
+      <line class="beam-flow" pathLength="1" x1="330" y1="150" x2="620" y2="150" style="animation-delay:.4s"/>
+      <line class="beam-flow" pathLength="1" x1="620" y1="150" x2="900" y2="150" style="animation-delay:.8s"/>
+      <line class="beam-flow" pathLength="1" x1="900" y1="150" x2="1150" y2="150" style="animation-delay:1.2s"/>
+      <line class="beam-flow" pathLength="1" x1="60" y1="360" x2="330" y2="360" style="animation-delay:.2s"/>
+      <line class="beam-flow" pathLength="1" x1="330" y1="360" x2="620" y2="360" style="animation-delay:.6s"/>
+      <line class="beam-flow" pathLength="1" x1="620" y1="360" x2="900" y2="360" style="animation-delay:1s"/>
+      <line class="beam-flow" pathLength="1" x1="900" y1="360" x2="1150" y2="360" style="animation-delay:1.4s"/>
+      <circle class="node" cx="60" cy="150" r="4"/><circle class="node" cx="330" cy="150" r="4" style="animation-delay:.3s"/>
+      <circle class="node" cx="620" cy="150" r="4" style="animation-delay:.6s"/><circle class="node" cx="900" cy="150" r="4" style="animation-delay:.9s"/>
+      <circle class="node" cx="1150" cy="150" r="4" style="animation-delay:1.2s"/>
+      <circle class="node" cx="60" cy="360" r="4" style="animation-delay:.15s"/><circle class="node" cx="330" cy="360" r="4" style="animation-delay:.45s"/>
+      <circle class="node" cx="620" cy="360" r="4" style="animation-delay:.75s"/><circle class="node" cx="900" cy="360" r="4" style="animation-delay:1.05s"/>
+      <circle class="node" cx="1150" cy="360" r="4" style="animation-delay:1.35s"/>
+    </svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Steel detailing that fabricates right the first time.</h1>
+      <p class="lead">Beamvex prepares shop drawings, erection drawings and fabrication files for steel fabricators, EPC contractors and structural engineers. Send the contract drawings. We return sheets your shop can cut, drill and weld from.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Send drawings for a quote</a>
+        <a class="link-plain" href="#services">See what we produce</a>
+      </div>
+      <p class="hero-note">We model in Tekla Structures. A second detailer checks every sheet before it is issued.</p>
+    </div>
+
+    <div class="sheet" aria-label="Sample drawing sheet">
+      <div class="sheet-in">
+        <div class="sheet-scroll">
+<svg class="dwg" viewBox="0 0 800 480" role="img" aria-labelledby="dwg-t dwg-d">
+<title id="dwg-t">Beam to column end plate connection</title>
+<desc id="dwg-d">Elevation of a W310x39 beam bolted to a W200x46 column through an extended end plate with eight bolts, beside a front view of the end plate showing bolt spacing. A revision cloud marks the changed end plate detail.</desc>
+<defs>
+  <g id="bolt-side"><path d="M118 0H161"/><rect x="152" y="-6" width="9" height="12"/><rect x="119" y="-6" width="9" height="12"/></g>
+  <g id="bolt-face"><circle r="7"/><path d="M-11 0H11M0-11V11"/></g>
+</defs>
+
+<!-- MAIN ELEVATION -->
+<g transform="translate(40 0)">
+  <g style="--d:.1s">
+    <rect class="fillshape" x="50" y="20" width="12" height="420"/>
+    <rect class="fillshape" x="128" y="20" width="12" height="420"/>
+    <rect class="o draw" pathLength="1" x="50" y="20" width="90" height="420"/>
+    <path class="t draw" pathLength="1" d="M62 20V440M128 20V440"/>
+    <rect class="t draw" pathLength="1" x="62" y="173" width="66" height="6"/>
+    <rect class="t draw" pathLength="1" x="62" y="311" width="66" height="6"/>
+  </g>
+  <g style="--d:.5s">
+    <rect class="fillshape" x="140" y="140" width="12" height="210"/>
+    <rect class="o draw" pathLength="1" x="140" y="140" width="12" height="210"/>
+  </g>
+  <g style="--d:.8s">
+    <rect class="fillshape" x="152" y="170" width="318" height="12"/>
+    <rect class="fillshape" x="152" y="308" width="318" height="12"/>
+    <rect class="o draw" pathLength="1" x="152" y="170" width="318" height="12"/>
+    <rect class="o draw" pathLength="1" x="152" y="308" width="318" height="12"/>
+    <path class="t draw" pathLength="1" d="M470 170l6 25-12 25 12 25-12 25 12 25-6 25"/>
+  </g>
+
+  <path class="cl fade" style="--f:1.2s" d="M95 6V454M152 245H498"/>
+
+  <g class="fade" style="--f:1.4s">
+    <use href="#bolt-side" class="bside" y="152"/>
+    <use href="#bolt-side" class="bside" y="200"/>
+    <use href="#bolt-side" class="bside" y="290"/>
+    <use href="#bolt-side" class="bside" y="338"/>
+    <path class="weld" d="M152 170h10l-10-10zM152 320h10l-10 10z"/>
+  </g>
+
+  <!-- dimensions -->
+  <g class="fade" style="--f:1.7s">
+    <path class="dm" d="M8 140H44M8 350H44M20 140V350M15 145L25 135M15 355L25 345"/>
+    <text class="dt" transform="translate(13 245) rotate(-90)">430</text>
+    <path class="dm" d="M478 170H518M478 320H518M510 170V320M505 175L515 165M505 325L515 315"/>
+    <text class="dt" transform="translate(503 245) rotate(-90)">310</text>
+  </g>
+
+  <!-- tags -->
+  <g class="fade" style="--f:1.9s">
+    <circle cx="95" cy="70" r="2.5" class="weld"/>
+    <path class="t" d="M95 70H210"/>
+    <text class="tx" x="216" y="75"><tspan class="tag">C3</tspan> W200×46 column</text>
+    <circle cx="146" cy="140" r="2.5" class="weld"/>
+    <path class="t" d="M146 140L166 114H180"/>
+    <text class="tx" x="186" y="119"><tspan class="tag">EP1</tspan> PL25×200×430</text>
+    <circle cx="330" cy="170" r="2.5" class="weld"/>
+    <path class="t" d="M330 170L346 146H360"/>
+    <text class="tx" x="366" y="151"><tspan class="tag">B14</tspan> W310×39 beam</text>
+  </g>
+</g>
+
+<!-- view title 1 -->
+<g class="fade" style="--f:1.9s">
+  <circle class="bub" cx="112" cy="463" r="11"/>
+  <text class="bt" x="112" y="467.5">1</text>
+  <text class="tx" x="132" y="468">Beam to column, elevation  1:20</text>
+</g>
+
+<!-- DETAIL A -->
+<g style="--d:1s">
+  <rect class="fillshape" x="590" y="140" width="100" height="210"/>
+  <rect class="o draw" pathLength="1" x="590" y="140" width="100" height="210"/>
+</g>
+<g class="fade" style="--f:1.6s">
+  <rect class="ph" x="600" y="170" width="80" height="12"/>
+  <rect class="ph" x="600" y="308" width="80" height="12"/>
+  <rect class="ph" x="636" y="182" width="8" height="126"/>
+  <path class="cl" d="M640 128V362"/>
+  <use href="#bolt-face" class="bolt" x="615" y="152"/>
+  <use href="#bolt-face" class="bolt" x="665" y="152"/>
+  <use href="#bolt-face" class="bolt" x="615" y="200"/>
+  <use href="#bolt-face" class="bolt" x="665" y="200"/>
+  <use href="#bolt-face" class="bolt" x="615" y="290"/>
+  <use href="#bolt-face" class="bolt" x="665" y="290"/>
+  <use href="#bolt-face" class="bolt" x="615" y="338"/>
+  <use href="#bolt-face" class="bolt" x="665" y="338"/>
+</g>
+<g class="fade" style="--f:1.8s">
+  <!-- pitches -->
+  <path class="dm" d="M678 152H746M678 200H746M678 290H746M678 338H746M738 152V338M733 157L743 147M733 205L743 195M733 295L743 285M733 343L743 333"/>
+  <text class="dt" transform="translate(731 176) rotate(-90)">100</text>
+  <text class="dt" transform="translate(731 245) rotate(-90)">185</text>
+  <text class="dt" transform="translate(731 314) rotate(-90)">100</text>
+  <!-- overall height -->
+  <path class="dm" d="M694 140H778M694 350H778M770 140V350M765 145L775 135M765 355L775 345"/>
+  <text class="dt" transform="translate(763 245) rotate(-90)">430</text>
+  <!-- gauge -->
+  <path class="dm" d="M615 356V392M665 356V392M615 386H665M610 391L620 381M660 391L670 381"/>
+  <text class="dt" x="640" y="379">100</text>
+  <!-- width -->
+  <path class="dm" d="M590 356V418M690 356V418M590 412H690M585 417L595 407M685 417L695 407"/>
+  <text class="dt" x="640" y="405">200</text>
+</g>
+<g class="fade" style="--f:1.9s">
+  <circle class="bub" cx="608" cy="88" r="12"/>
+  <text class="bt" x="608" y="92.5">A</text>
+  <text class="tx" x="628" y="93">End plate face  1:5</text>
+  <text class="tx" x="570" y="448">Bolts M20 gr 8.8, 8 off</text>
+  <text class="tx" x="570" y="467">Fillet welds 8 mm all round</text>
+</g>
+
+<!-- REVISION CLOUD + TAG -->
+<path class="cloud" pathLength="1" d="M570 120a13 13 0 0 1 20 0a13 13 0 0 1 20 0a13 13 0 0 1 20 0a13 13 0 0 1 20 0a13 13 0 0 1 20 0a13 13 0 0 1 20 0a13 13 0 0 1 20 0a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 0 20a13 13 0 0 1 -20 0a13 13 0 0 1 -20 0a13 13 0 0 1 -20 0a13 13 0 0 1 -20 0a13 13 0 0 1 -20 0a13 13 0 0 1 -20 0a13 13 0 0 1 -20 0a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20a13 13 0 0 1 0 -20z"/>
+<g class="revtag">
+  <path class="revtri" d="M572 92l13 22h-26z"/>
+  <text class="revtxt" x="572" y="110">C</text>
+</g>
+</svg>
+        </div>
+        <div class="tb">
+          <div class="c3"><small>Company</small><b>Beamvex Steel Detailing Pvt Ltd</b></div>
+          <div class="c3"><small>Project</small><b>Typical moment connection</b></div>
+          <div><small>Sheet</small><b>S-104</b></div>
+          <div class="rev"><small>Revision</small><b>C</b></div>
+          <div><small>Scale</small><b>As noted</b></div>
+          <div><small>Drawn</small><b>Detailer</b></div>
+          <div><small>Checked</small><b>Second detailer</b></div>
+          <div><small>Status</small><b>Approved</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="band band-panel" id="services">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <h2>What we produce</h2>
+      <p>Seven deliverables, from the first anchor bolt plan to the last NC file. Open a row to see what is included.</p>
+    </div>
+    <div class="reg reveal-stag">
+      <details open>
+        <summary><span class="code">AB</span><span class="name">Anchor bolt plans</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Setting-out drawings for anchor bolts, base plates and embeds, issued ahead of the main package so foundations can go in on schedule.</p>
+          <ul>
+            <li>Bolt layouts with levels and projections</li>
+            <li>Base plate and grout details</li>
+            <li>Column and base plate schedule</li>
+          </ul>
+        </div></div>
+      </details>
+      <details>
+        <summary><span class="code">ER</span><span class="name">Erection drawings</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Piece-marked plans and elevations that tell the site crew where each member goes and how it is bolted.</p>
+          <ul>
+            <li>Framing plans and elevations</li>
+            <li>Assembly and bolt lists</li>
+            <li>Piece weights and erection notes</li>
+          </ul>
+        </div></div>
+      </details>
+      <details>
+        <summary><span class="code">SH</span><span class="name">Shop drawings</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Dimensioned drawings of every beam, column, brace and plate, ready for cutting, drilling, fitting and welding.</p>
+          <ul>
+            <li>Single-part and assembly drawings</li>
+            <li>Weld symbols, hole sizes and finish notes</li>
+            <li>Material list on every sheet</li>
+          </ul>
+        </div></div>
+      </details>
+      <details>
+        <summary><span class="code">CD</span><span class="name">Connection design</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Bolted and welded connections designed to the governing code, with calculation sheets for the engineer's approval.</p>
+          <ul>
+            <li>Standard and custom connections</li>
+            <li>Calculation sheets showing the load path</li>
+            <li>Approval comments tracked to closure</li>
+          </ul>
+        </div></div>
+      </details>
+      <details>
+        <summary><span class="code">MS</span><span class="name">Miscellaneous steel</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Stairs, ladders, handrails, platforms, grating, lintels and other secondary steel.</p>
+          <ul>
+            <li>Layouts checked against architectural drawings</li>
+            <li>Field-fit notes where site dimensions are uncertain</li>
+            <li>Galvanizing and paint schedules</li>
+          </ul>
+        </div></div>
+      </details>
+      <details>
+        <summary><span class="code">NC</span><span class="name">Fabrication data</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Files your CNC lines and purchasing team can use straight from the model.</p>
+          <ul>
+            <li>DSTV NC files for beam lines, drills and plate cutters</li>
+            <li>Bolt, plate and section lists</li>
+            <li>Weight and paint area reports</li>
+          </ul>
+        </div></div>
+      </details>
+      <details>
+        <summary><span class="code">BM</span><span class="name">Steel BIM modelling</span><span class="plus" aria-hidden="true"></span></summary>
+        <div class="body"><div class="body-in">
+          <p>Tekla Structures models built to fabrication detail and coordinated with the architectural, structural and MEP models.</p>
+          <ul>
+            <li>Clash detection reports</li>
+            <li>IFC and native model exchange</li>
+            <li>As-built models updated after shop changes</li>
+          </ul>
+        </div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="band" id="process">
+  <div class="wrap">
+    <div class="band-head reveal">
+      <h2>How a job moves through Beamvex</h2>
+      <p>Five stages, each with a named checkpoint, so you always know where your drawings are.</p>
+    </div>
+    <ol class="steps reveal-stag">
+      <li>
+        <span class="hex" aria-hidden="true">1</span>
+        <h3>Review and RFIs</h3>
+        <p>We read the contract drawings, specification and code, then send one numbered list of questions before modelling starts.</p>
+      </li>
+      <li>
+        <span class="hex" aria-hidden="true">2</span>
+        <h3>Model and connections</h3>
+        <p>We build the 3D model, apply connections and set piece marks to your fabrication standards.</p>
+      </li>
+      <li>
+        <span class="hex" aria-hidden="true">3</span>
+        <h3>Check</h3>
+        <p>A second detailer checks the model and every sheet against the contract drawings and your standards.</p>
+      </li>
+      <li>
+        <span class="hex" aria-hidden="true">4</span>
+        <h3>Issue for approval</h3>
+        <p>You receive PDF sheets with a transmittal. Comments come back on the same drawings.</p>
+      </li>
+      <li>
+        <span class="hex" aria-hidden="true">5</span>
+        <h3>Release for fabrication</h3>
+        <p>After approval we issue final sheets, NC files and lists. Later changes are clouded and logged by revision.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- STANDARDS -->
+<section class="band band-inv" id="standards">
+  <div class="wrap">
+    <h2 class="reveal">Software, codes and file formats</h2>
+    <div class="std reveal-stag">
+      <div>
+        <h3>Software</h3>
+        <p>Tekla Structures for modelling and drawings. AutoCAD for miscellaneous steel and legacy sheets. Revit and Navisworks for coordination with other trades.</p>
+      </div>
+      <div>
+        <h3>Codes</h3>
+        <p>AISC 360 and 303, CISC, BS EN 1993, AS 4100 and IS 800. If your project uses another standard, send it with the drawings.</p>
+      </div>
+      <div>
+        <h3>File formats</h3>
+        <p>PDF, DWG, DXF, DSTV NC, IFC and Excel lists. Tell us what your shop and site teams need and we set it up once for the whole job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="band" id="sectors">
+  <div class="wrap sectors reveal">
+    <div class="intro">
+      <h2>Buildings, bridges and plants we detail</h2>
+      <p>If it is fabricated from steel sections and plate, we can detail it.</p>
+    </div>
+    <ul class="sector-list">
+      <li><strong>Industrial sheds and pre-engineered buildings</strong><span>Portal frames, purlins, girts, bracing and crane beams.</span></li>
+      <li><strong>Warehouses and logistics centres</strong><span>Long-span frames, mezzanines and dock canopies.</span></li>
+      <li><strong>Multi-storey buildings</strong><span>Commercial, residential and parking structures with composite floors.</span></li>
+      <li><strong>Bridges and walkways</strong><span>Girders, trusses, pedestrian bridges and access walkways.</span></li>
+      <li><strong>Process plants and pipe racks</strong><span>Structures, platforms, stairs and equipment supports.</span></li>
+      <li><strong>Long-span roofs and canopies</strong><span>Trusses, space frames and architectural steel.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="band band-panel" id="contact">
+  <div class="wrap contact reveal">
+    <div class="side">
+      <h2>Send us your drawings</h2>
+      <p>Tell us about the project. We reply with a scope, timeline and price. When your email opens, attach the contract drawings, specification and your fabrication standard.</p>
+      <a class="mail" href="mailto:sales@beamvex.in">sales@beamvex.in</a>
+      <div class="careers">
+        <h3>Careers</h3>
+        <p>Interested in detailing with us? Send your CV to <a href="mailto:hr@beamvex.in">hr@beamvex.in</a>.</p>
+      </div>
+    </div>
+    <form class="form" id="quote" novalidate>
+      <div>
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div>
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div>
+        <label for="f-company">Company</label>
+        <input id="f-company" name="company" type="text" autocomplete="organization">
+      </div>
+      <div>
+        <label for="f-type">What do you need?</label>
+        <select id="f-type" name="type">
+          <option>Shop drawings</option>
+          <option>Erection and anchor bolt drawings</option>
+          <option>Connection design</option>
+          <option>Miscellaneous steel</option>
+          <option>Fabrication data (NC files)</option>
+          <option>Steel BIM modelling</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="f-msg">About the project</label>
+        <textarea id="f-msg" name="message" placeholder="Location, approximate tonnage, governing code, software you use and your deadline." required></textarea>
+      </div>
+      <div class="full actions">
+        <button class="btn btn-primary" type="submit">Write to Beamvex</button>
+        <p class="form-note" id="form-status" role="status">This opens your email app with the details filled in.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 300 215" aria-hidden="true"><use href="#bx-mark"/></svg>
+      <span>
+        <span class="brand-name">Beamvex</span>
+        <span class="brand-sub">Steel Detailing</span>
+      </span>
+    </div>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#standards">Standards</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:hr@beamvex.in">Careers</a>
+    </nav>
+    <small>&copy; 2026 Beamvex Steel Detailing Pvt Ltd. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var saved=localStorage.getItem('bx-theme'); if(saved){root.setAttribute('data-theme',saved);}}catch(e){}
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t) return t;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  btn.setAttribute('aria-pressed', current()==='dark' ? 'true' : 'false');
+  btn.addEventListener('click',function(){
+    var next=current()==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',next);
+    btn.setAttribute('aria-pressed', next==='dark' ? 'true' : 'false');
+    try{localStorage.setItem('bx-theme',next);}catch(e){}
+  });
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in-view'); io.unobserve(en.target); } });
+    },{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+    document.querySelectorAll('.reveal,.reveal-stag').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal,.reveal-stag').forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  var MAIL='sales@beamvex.in';
+  var form=document.getElementById('quote'), status=document.getElementById('form-status');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){
+      form.reportValidity();
+      status.textContent='Please fill in your name, a valid email and a few lines about the project.';
+      return;
+    }
+    var d=new FormData(form);
+    var subject='Quote request: '+d.get('type')+(d.get('company') ? ' ('+d.get('company')+')' : '');
+    var body='Name: '+d.get('name')+'\nCompany: '+(d.get('company')||'-')+'\nEmail: '+d.get('email')+'\nNeed: '+d.get('type')+'\n\n'+d.get('message');
+    var a=document.createElement('a');
+    a.href='mailto:'+MAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    document.body.appendChild(a); a.click(); a.remove();
+    status.textContent='Your email app should open. If it does not, write to '+MAIL+'.';
+  });
+})();
+</script>
+</body>
+</html>
